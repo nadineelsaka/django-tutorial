@@ -1,0 +1,51 @@
+basic steps for start up a django project:
+
+1- venv or any name niether venv
+-virtualenv venv 
+-.\venv\Scripts\activate
+-pip install django
+
+2- start project
+-django-admin startproject projectname .
+
+3- start app --> define it in settings.py
+-django-admin startapp appname
+
+4- create database in pgadmin4 --> define it in settings.py
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'Geno_db',
+        'USER': 'postgres',
+        'PASSWORD': 'N01275017020n',
+        'HOST': 'localhost',
+        'PORT': '5432'
+    }
+}
+
+5- migrations
+-py manage.py makemigrations
+-py manage.py migrate
+
+6- create models and migrate --> define it in admin.py
+-admin.site.register(modelname)
+
+7- create superuser
+-py manage.py createsuperuser
+
+8- runserver
+-py manage.py runserver
+-py manage.py runserver 9000
+
+9- create templets folder in the project folder 
+- base.html
+--> define it in settings.py
+'DIRS': [os.path.join(BASE_DIR, 'templates')],
+
+10- create static folder in the project folder
+- js
+- css
+- images
+--> define it in settings.py
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]

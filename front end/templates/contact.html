@@ -1,0 +1,62 @@
+{%extends 'base.html'%}
+<!DOCTYPE html>
+<html lang="en">
+
+{%block title%}
+Contact Us
+{%endblock%}
+
+{%block breadcrumb%}
+<li class="breadcrumb-item active">Contact Us</li>
+{%endblock%}
+
+{%block content%}
+<style>
+    table.tbl {
+        width: 300px;
+        border-collapse: collapse;
+    }
+
+    .tbl th,
+    .tbl td {
+        border: solid 1px #777;
+        padding: 5px;
+    }
+
+    .thead {
+        background: lightblue;
+    }
+
+    .thead-dark {
+        background: #222;
+        color: white;
+    }
+</style>
+<table class="tbl">
+    <thead id="mythead" class="thead">
+        <tr>
+            <th>First name</th>
+            <th>Last name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Denice</td>
+            <td>Hobermann</td>
+        </tr>
+        <tr>
+            <td>Paulo</td>
+            <td>Cornell</td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<button onclick="toggle();">Toggle class</button>
+
+<script>
+    let toggle = () => {
+        let element = document.getElementById("mythead");
+        element.classList.toggle("thead-dark");
+    }
+</script>
+{%endblock%}
